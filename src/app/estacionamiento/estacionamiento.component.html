@@ -1,1 +1,22 @@
-<p>estacionamiento works!</p>
+<div style="margin-top: 50px; text-align: center;">
+    <div style="border: 1px solid #ccc; padding: 20px; width: 300px; margin: 0 auto;">
+      <h2>Calculadora de Estacionamiento</h2>
+  
+      <div style="margin-bottom: 10px;">
+        <label for="hours">Horas:</label>
+        <input type="number" id="hours" [(ngModel)]="hours" placeholder="Horas" style="width: 100%;">
+      </div>
+  
+      <div style="margin-bottom: 10px;">
+        <label for="minutes">Minutos:</label>
+        <input type="number" id="minutes" [(ngModel)]="minutes" placeholder="Minutos" style="width: 100%;">
+      </div>
+  
+      <button (click)="calcularCosto()" style="background-color: #007bff; color: #fff; border: none; padding: 10px; cursor: pointer; width: 100%;">Calcular</button>
+  
+      <div *ngIf="totalCost !== null" style="margin-top: 10px;">
+        <p>El costo de estacionamiento es de: {{ totalCost | currency:'USD':'symbol':'1.2-2' }}</p>
+      </div>
+    </div>
+  </div>
+  
